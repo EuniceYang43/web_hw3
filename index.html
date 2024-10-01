@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taylor Swift Website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+  		<meta name="description" content="Taylor Swift Website">
+  		<meta name="keywords" content="HTML,CSS,RWD,JavaScript">
+ 		<meta name="author" content="67-240 Student">
+		<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+<style type="text/css">
+	* {
+		font-family: 'Open Sans', sans-serif;
+		color:#606060;
+		text-align: center;
+		font-size:95%;
+		box-sizing: border-box;
+		}
+	.incline {
+		display: incline-block;
+		margin-right: 20px;
+	}
+	/* shop boxes */
+	.container{
+		background-color:lightgrey;
+		height:40vh;
+		padding: 3%;
+		margin: 20px 0; /* Equal horizontal margin on both sides */
+		box-sizing: border-box; /* Ensure padding and margin are included in width */
+		display: flex; 
+    	flex-wrap: wrap; 
+    	justify-content: space-between; /* Space between boxes */
+		/* overflow: hidden; */
+
+	}
+
+	.box-container {
+    padding: 10px; /* Set uniform padding for all boxes */
+    margin: 10px; /* Set uniform margin for all boxes */
+    /* flex: 1 1 calc(30% - 20px);  */
+    box-sizing: border-box; /* Include padding and margin in width */
+	text-align: center; 
+}
+
+	.c1,.c2,.c3{
+		/* padding:inherit; */
+		display:inline-block;
+		height:95%;
+		width:32%;
+		background-color:#f8f8f8;
+	}
+
+	/*  
+	.c1{
+		background-color:#f8f8f8;
+	}
+
+	.c2{
+		background-color:#f8f8f8;
+	}
+
+	.c3{
+		background-color:#f8f8f8;
+	} */
+
+/*  
+	@media (max-width: 800px){
+		.c1{
+			width:100%;
+			-webkit-order:1;
+			order:1;
+		}
+		.c2{
+			width:100%;
+			-webkit-order:2;
+			order:2;
+		}
+		.c3{
+			width:100%;
+			-webkit-order:3;
+			order:3;
+		}
+	} 
+*/
+
+/*  
+@media (max-width: 800px) {
+    .box-container {
+        flex: 1 1 100%; 
+    }
+}
+
+*/
+
+
+/* make picture no exceeding the container; any overflow part will be hidden */
+html, body {
+    max-width: 100%;   /* Prevent content from exceeding the viewport width */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    overflow-y: auto;   /* Allow vertical scrolling */
+}
+
+/* To ensure images do not exceed their container */
+img {
+    max-width: 100%;   /* Ensure images do not exceed their container's width */
+    height: auto;      /* Maintain aspect ratio */
+}
+
+/* Styling for the buy box */
+.buy-box {
+  position: relative;
+  bottom: 0px; /* Move it to the bottom of the container */
+  left: 50%; /* Center */
+  transform: translateX(-50%); /* Adjust centering due to absolute positioning */
+  padding: 10px;
+  border: 2px solid black; /* Rectangle border around the box */
+  background-color: white; /* Background color for clarity */
+  box-sizing: border-box;
+  text-align: center; /* Center the text inside the rectangle */
+}
+
+/* Container for the videos */
+.video-row {
+    display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between; /* Distributes space evenly */
+    margin-top: 20px;
+	margin-right: 10px;
+  }
+
+  /* Style for each video thumbnail */
+  .video-item {
+    /* margin-right: 10px; */
+	flex: 1 1 calc(30% - 20px); /* Allow items to take up about 30% of the row with some margin */
+    margin: 10px;               /* Margin around each item */
+    box-sizing: border-box;      /* Include padding and border in the width */
+    text-align: center;          /* Center the text */
+  }
+
+  /* Ensure all images have the same size */
+  .video-row .video-item img {
+    width: 95%;  /* Set a fixed width for each video */
+    height: 82%; /* Corresponding height for 16:9 aspect ratio */
+  }
+
+  /* Responsive styles for smaller screens */
+@media (max-width: 800px) {
+    .video-item {
+        flex: 1 1 100%; /* Make each video item take the full width */
+    }
+}
+  /* container for the articles */
+  .article-row{
+	display: flex;
+    justify-content: space-between; /* Distributes space evenly */
+    margin-top: 20px;
+	gap: 20px; /* Adds consistent space between articles */
+	flex-wrap: wrap;  
+  }
+
+/* Style for each article item */
+.article-item {
+  flex: 1 1 calc(48% - 20px);; /* Make each article item take up equal space */
+  margin: 10px;               /* Margin around each item */
+    box-sizing: border-box;      /* Include padding and border in the width */
+    text-align: center;          /* Center the text */
+}
+
+.article-item img {
+  max-width: 100%; /* Make the image responsive to the container's width */
+  height: auto; /* Maintain the aspect ratio of the image */
+  display: block; /* Remove any inline space under the image */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 800px) {
+    .article-item {
+        flex: 1 1 100%; /* Make each article item take the full width */
+    }
+}
+
+
+.article-item a {
+    text-decoration: none;    
+} 
+
+/* 
+.article-item p {
+    margin: 5px 0 0; 
+    font-size: 1em;  
+}*/
+
+
+h1{
+	/* font-family: "Courier New", Courier, monospace; */
+	font-family: "Caveat", cursive, monospace;
+	font-size: 3em;
+	color: #606060;
+}
+
+p{
+	font-family: "Georgia", serif, monospace;
+	font-size: 1.5em;
+	color: #606060;
+}
+
+ul > li {
+	font-family: "Georgia", serif, monospace;
+	font-size: 2em;
+	color: #606060;
+}
+
+body {
+    background-color: #f8f8f8; /* Change to your desired color */
+    }
+
+</style>
+
+<body>
+	<div>
+		<header>
+		  <h1 id="title">Taylor Swift</h1>
+		  <nav>
+			<ul style="list-style: none; padding: 0; margin: 0; display: flex;">
+			  <li style="margin-right: 20px;"><a href="">Music</a></li>
+			  <li style="margin-right: 20px;"><a href="">Shop Now</a></li>
+			  <li style="margin-right: 20px;"><a href="">Tour Dates</a></li>
+			  <li style="margin-right: 20px;"><a href="">Videos</a></li>
+			  <li style="margin-right: 20px;"><a href="">News</a></li>
+			  <li><a href="">Sign up</a></li>
+			</ul>
+		  </nav>
+		</header>
+	  </div>
+	<!-- music -->
+
+	<!--  
+		<div id="Music" style="white-space: nowrap;">
+			<h1 style="display: inline-block; margin-right: 20px;">The Tortured Poets Department</h1>
+			<a href="https://taylor.lnk.to/TTPD-theanthology" target=_blank style="display: inline-block; margin-right: 20px;">
+		 	 <p>Stream/Download</p>
+			</a>
+			<img src="image 1.jpeg" height="350" width="400" alt="Album photo" style="display: inline-block;">
+	  	</div> -->
+		  <div id="Music" style="display: flex; flex-wrap: wrap; align-items: center;">
+			<h1 style="display: inline-block; margin-right: 20px;">The Tortured Poets Department</h1>
+			<a href="https://taylor.lnk.to/TTPD-theanthology" target="_blank" style="display: inline-block; margin-right: 20px;">
+			  <p>Stream/Download</p>
+			</a>
+			<img src="image 1.jpeg" alt="Album photo" style="flex: 1 1 auto; max-width: 100%; height: auto;">
+		  </div>
+
+	<!-- Shop -->
+	<!--  
+		<div class = "container">
+			<div class = "box-container c1">
+				<p>Records</p>
+				<div>
+					<p class = "buy-box">buy</p>
+				</div>
+			</div>
+			<div class = "box-container c2">
+				<p class = "buy-box">Sweatshirts</p>
+			</div>
+			<div class = "box-container c3">
+				<p class = "buy-box">Bracelets</p>
+			</div>
+		</div> -->
+		<div class="container" style="display: flex; flex-wrap: nowrap; gap: 20px;">
+			<div class="box-container c1" style="flex: 1 1 200px; min-width: 150px;">
+			  <p>Records</p>
+			  <div>
+				<a href="https://store.taylorswift.com/collections/all-music?utm_source=Original&utm_campaign=20240130&utm_medium=direct&utm_referrer=direct&utm_board=taylor-swift-6767&utm_country=US&utm_linkurl=taylor.lnk.to%2Fproduct1&lf=df2ed11db4d2c0af135b285fe51deb85" target=_blank>
+					<p class="buy-box">Buy</p>
+				</a>
+			  </div>
+			</div>
+			<div class="box-container c2" style="flex: 1 1 200px; min-width: 150px;">
+				<p>Sweatshirts</p>
+				<div>
+					<a href="https://store.taylorswift.com/collections/taylor-swift-the-eras-tour-shop?utm_source=Original&utm_campaign=20240130&utm_medium=direct&utm_referrer=direct&utm_board=taylor-swift-6767&utm_country=US&utm_linkurl=taylor.lnk.to%2Fproduct2&lf=9246c69e23436fb702e0cb1532a8678b" target=_blank>
+			  			<p class="buy-box">Buy</p>
+					</a>
+				</div>
+			</div >
+			<div class="box-container c3" style="flex: 1 1 200px; min-width: 150px;">
+				<p>General Gifts</p>
+				<div>
+					<a href="https://store.taylorswift.com/collections/the-tortured-poets-department-shop?utm_source=Original&utm_campaign=20240130&utm_medium=direct&utm_referrer=direct&utm_board=taylor-swift-6767&utm_country=US&utm_linkurl=taylor.lnk.to%2Fproduct3&lf=1eaf7e3748c800e8a1da665461886bce" target=_blank>
+			  			<p class="buy-box">Buy</p>
+					</a>
+				</div>
+			</div>
+		  </div>
+
+	<!-- Tour Dates -->
+		<div id = "tour">
+			<h1 style="font-size:3em"> Taylor Swift</h1>
+			<h1 style="font-size:3em"> The Eras Tour </h1>
+			<a href="https://www.taylorswift.com/tour-us/" target=_blank>
+				<p>U.S. Date</p>
+			</a>
+			<a href="https://www.taylorswift.com/tour/ " target=_blank>
+				<p>International Date</p>
+			</a>
+			<a href="https://www.disneyplus.com/movies/taylor-swift-the-eras-tour-taylors-version/OHLx94HKtS6X" target=_blank>
+				<p>Stream on Disney+</p>
+			</a>
+		</div>
+	<!-- Directed Projects -->
+		<div id = "mv">
+			<h1>Videos</h1>
+			<div class="video-row">
+				<!-- Video 1 -->
+				<div class="video-item">
+					<a href="https://www.youtube.com/watch?v=q3zqJs7JUCQ" target="_blank">
+					  <img src="https://img.youtube.com/vi/q3zqJs7JUCQ/maxresdefault.jpg" alt="Video Thumbnail 1">
+					</a>
+					<p>Fortnight</p>
+				  </div>	 
+
+				 <!-- Video 2 -->
+				 <div class="video-item">
+					<a href="https://www.youtube.com/watch?v=b1kbLwvqugk" target="_blank">
+					  <img src="https://img.youtube.com/vi/b1kbLwvqugk/maxresdefault.jpg" alt="Video Thumbnail 2">
+					</a>
+					<p>Anti-hero</p>
+				  </div>
+				
+				  <!-- Video 3 -->
+				  <div class="video-item">
+					<a href="https://www.youtube.com/watch?v=tollGa3S0o8" target="_blank">
+					  <img src="https://img.youtube.com/vi/tollGa3S0o8/maxresdefault.jpg" alt="Video Thumbnail 3">
+					</a>
+					<p>All Too Well</p>
+				  </div>
+				</div>
+		</div>
+		<!-- general updates -->
+		<div id = "update">
+			<h1>News</h1>
+			<div class="article-row">
+				<!-- article 1 -->
+				<div class="article-item">
+					<img src="image2.jpeg" alt="News 1 image">
+					<a href="https://www.newsweek.com/taylor-swift-kamala-harris-endorsement-1959178" target="_blank">
+						<p>Taylor Swift Endorsement Hurts Kamala Harris, Poll Suggests</p>
+					</a>
+				  </div>	 
+
+				 <!-- article 2 -->
+				 <div class="article-item">
+					<img src="image3.jpeg" alt="News 1 image">
+					<a href="https://www.yahoo.com/entertainment/where-taylor-swift-today-september-110147779.html" target="_blank">
+						<p>Where is Taylor Swift Today, September 27? When is Her Next Show?</p>
+					</a>
+				  </div>
+			</div>
+		</div>
+		<!-- sign up -->
+		<form action="http://www.example.com/review.php" method="get">
+			<fieldset>
+				<legend>Your Details:</legend>
+				<label>Name: <input type="text" name="name" size="30" maxlength="100"></label><br />
+				<label>Email: <input type="email" name="email" size="30" maxlength="100"></label><br />
+				<label><input type="checkbox" name="subscribe" checked="checked" /> Sign me up for email updates</label><br />
+				<input type="submit" value="Subscribe" />
+			</fieldset><br />
+		<!-- footer -->
+		<div class="footer clearfix">
+			<div class="container_12">
+				<p class="grid_12"><a href="">Legal Information</a> | <a href="">Privacy Policy</a> | <a href="">Copyright &copy; Taylor Swift 2024</a></p>
+			</div>
+		</div>
+
+</body>
